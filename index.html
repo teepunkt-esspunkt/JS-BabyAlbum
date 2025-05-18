@@ -1,0 +1,48 @@
+<!-- Baby-Album -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Baby-Album</title>
+  <link href="baby.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/exifr/dist/full.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Baby-Album</h1>
+
+  <p>Dateien auswählen oder hierhin ziehen:</p>
+  <input type="file" id="fileInput" multiple accept="image/*">
+  
+  <h2>Gewichtsentwicklung</h2>
+  <div id="gewicht-anzeige">
+	
+	<div id="timeline"></div>
+	<div id="diagramm-wrapper">
+		<canvas id="gewicht-chart"></canvas>
+		<div id="hover-image-preview" style="margin-top: 1em; text-align: center;"></div>
+	</div>
+  </div>
+  
+
+  <div id="preview"></div>
+  
+  <div id="gewicht-formular" style="margin-top:2em;">
+    <h2>Gewichtsangaben</h2>
+	<button id="gewicht-exportieren">Speichern als Datei</button> 
+	<input type="file" id="gewicht-importieren" accept=".json" style="display:none;">
+	<label for="gewicht-importieren" class="button-label">Datei laden</label>
+	
+    <div id="gewicht-eintraege"></div>
+    <button id="neues-gewicht">Weiteres Gewicht hinzufügen</button>
+    <button id="gewicht-speichern">Speichern und fortfahren</button>
+  </div>
+
+  <script src="baby-utils.js"></script>
+  <script src="baby-bilder.js"></script>
+  <script src="baby-gewicht.js"></script>
+
+  
+</body>
+</html>
+
